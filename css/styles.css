@@ -216,7 +216,7 @@ a {
 }
 
 .features-item-icon {
-  display: block;
+  display: flex;
   position: relative;
   justify-content: center;
   align-items: center;
@@ -313,23 +313,30 @@ a {
   gap: 24px;
 }
 
-.s-m {
+.soc-m {
   width: 40px;
   height: 40px;
-  border-radius: 50%;
+}
+
+.s-m-icon {
+  fill: #f4f4fd;
+}
+
+.s-m-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
   background-color: #4d5ae5;
-  position: relative;
+  border-radius: 50%;
   padding: 12px 12px;
   cursor: pointer;
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.s-m-icon {
-  position: absolute;
-  fill: #f4f4fd;
-}
-
-.team-item:hover .s-m {
+.s-m-link:hover,
+.s-m-link:focus {
   background-color: #404bbf;
 }
 
@@ -365,6 +372,7 @@ a {
 .portfolio-box {
   position: relative;
   overflow: hidden;
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .portfolio-box-text {
@@ -372,7 +380,7 @@ a {
   line-height: 1.5;
   letter-spacing: 0.02em;
   color: #f4f4fd;
-  padding: 40px 32px 0 32px;
+  padding: 40px 32px;
   box-sizing: border-box;
   top: 0;
   left: 0;
@@ -429,14 +437,13 @@ a {
 
 .footer-container {
   display: flex;
-  justify-content: flex-start;
   align-items: baseline;
-  gap: 120px;
+  margin: 0;
 }
 
 .footer-container-logo {
   width: 264px;
-  margin: 0;
+  margin-right: 120px;
 }
 
 .footer-social-media {
@@ -473,18 +480,23 @@ a {
   gap: 16px;
 }
 
-.s-m.foot {
-  position: relative;
+/* .soc-m.foot {
+
+} */
+
+.s-m-link-foot {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
   padding: 8px 8px;
   cursor: pointer;
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.s-m-icon-foot {
-  position: absolute;
-}
-
-.s-m.foot:hover {
+.s-m-link-foot:hover,
+.s-m-link-foot:focus {
   background-color: #31d0aa;
 }
 /*....... FOOTER....... */
