@@ -437,12 +437,14 @@ a {
 
 .footer-container {
   display: flex;
+  justify-content: center;
   align-items: baseline;
   margin: 0;
 }
 
-.footer-container-logo {
+.container.footer-container-logo {
   width: 264px;
+  margin-left: 0;
   margin-right: 120px;
 }
 
