@@ -52,6 +52,8 @@ a {
 /*....... HEADER....... */
 .page-header {
   border-bottom: 1px solid #e7e9fc;
+  box-shadow: 0 1px 6px 0 rgba(46, 47, 66, 0.08),
+    0 1px 1px 0 rgba(46, 47, 66, 0.16), 0 2px 1px 0 rgba(46, 47, 66, 0.08);
 }
 
 .header-container {
@@ -97,10 +99,27 @@ a {
   line-height: 1.5;
   letter-spacing: 0.02em;
   color: #2e2f42;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.header-nav-link.current {
+  position: relative;
+}
+
+.header-nav-link.current::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  width: 100%;
+  height: 4px;
+  background-color: #404bbf;
+  border-radius: 2px;
 }
 
 .header-nav-link:hover,
-.header-nav-link:focus {
+.header-nav-link:focus,
+.header-nav-link.current {
   color: #404bbf;
 }
 
@@ -123,6 +142,7 @@ a {
   line-height: 1.5;
   letter-spacing: 0.02em;
   color: #434455;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .header-address-info:hover,
@@ -133,6 +153,16 @@ a {
 /*....... HERO....... */
 .hero {
   background-color: #2e2f42;
+  background-image: linear-gradient(
+      rgba(46, 47, 66, 0.7),
+      rgba(46, 47, 66, 0.7)
+    ),
+    url(../images/peopleoffice.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  max-width: 1440px;
+  margin: 0 auto;
   padding: 188px 0;
 }
 
@@ -162,6 +192,7 @@ a {
   letter-spacing: 0.04em;
   color: #fff;
   cursor: pointer;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .hero-btn:hover,
@@ -182,6 +213,24 @@ a {
 
 .features-item {
   flex-basis: calc((100% - 72px) / 4);
+}
+
+.features-item-icon {
+  display: block;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  padding: 24px 100px;
+  margin-bottom: 8px;
+  border: 1px solid #8e8f99;
+  border-radius: 4px;
+  width: 264px;
+  height: 112px;
+  background-color: #f4f4fd;
+}
+
+.features-item-icon.icon {
+  position: absolute;
 }
 
 .features-subtitle {
@@ -254,6 +303,34 @@ a {
   line-height: 1.5;
   letter-spacing: 0.02em;
   text-align: center;
+  margin-bottom: 8px;
+}
+
+.team-social-media {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+}
+
+.s-m {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #4d5ae5;
+  position: relative;
+  padding: 12px 12px;
+  cursor: pointer;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.s-m-icon {
+  position: absolute;
+  fill: #f4f4fd;
+}
+
+.team-item:hover .s-m {
+  background-color: #404bbf;
 }
 
 /*....... PORTFOLIO....... */
@@ -283,6 +360,37 @@ a {
 
 .portfolio-item {
   flex-basis: calc((100% - 48) / 3);
+}
+
+.portfolio-box {
+  position: relative;
+  overflow: hidden;
+}
+
+.portfolio-box-text {
+  position: absolute;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  color: #f4f4fd;
+  padding: 40px 32px 0 32px;
+  box-sizing: border-box;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #4d5ae5;
+  transform: translateY(100%);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.portfolio-item:hover .portfolio-box-text {
+  transform: translateY(0);
+}
+
+.portfolio-item:hover {
+  cursor: pointer;
+  box-shadow: 0 2px 1px 0 rgba(46, 47, 66, 0.08),
+    0 1px 1px 0 rgba(46, 47, 66, 0.16), 0 1px 6px 0 rgba(46, 47, 66, 0.08);
 }
 
 .portfolio-img {
@@ -319,6 +427,22 @@ a {
   margin: 0 auto;
 }
 
+.footer-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: baseline;
+  gap: 120px;
+}
+
+.footer-container-logo {
+  width: 264px;
+  margin: 0;
+}
+
+.footer-social-media {
+  margin: 0;
+}
+
 .footer-logo {
   display: inline-block;
   margin-bottom: 16px;
@@ -333,5 +457,34 @@ a {
   letter-spacing: 0.02em;
   color: #f4f4fd;
   width: 264px;
+}
+
+.footer-s-m-text {
+  font-weight: 500;
+  color: #fff;
+  width: 96px;
+  margin-bottom: 16px;
+}
+
+.footer-s-m {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+}
+
+.s-m.foot {
+  position: relative;
+  padding: 8px 8px;
+  cursor: pointer;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.s-m-icon-foot {
+  position: absolute;
+}
+
+.s-m.foot:hover {
+  background-color: #31d0aa;
 }
 /*....... FOOTER....... */
